@@ -19,7 +19,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	
         // Create a remote to track output
-        vrpn_Tracker_Remote *remote = new vrpn_Tracker_Remote("Tracker0@localhost");
+        vrpn_Tracker_Remote *remote = new vrpn_Tracker_Remote("Tracker0@138.37.33.146");
         remote->register_change_handler(NULL, tracker_handler);
         remote->shutup = true;
 
@@ -43,7 +43,7 @@ int _tmain(int argc, _TCHAR* argv[])
                 // Clear console
                 system("cls");
 
-                for (int i=0; i<iSKELETON_NUM; i++)
+                for (int i=0; i<3/*iSKELETON_NUM*/; i++)
                 {
                         // Convert orientation quaternion to euler angles
                         q_to_euler(eulerOrientation, orientation[i]);
